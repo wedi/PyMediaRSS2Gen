@@ -14,5 +14,5 @@ insert_final_newline = true
 indent_size = 4
 trim_trailing_whitespace = false
 
-[README.txt]
+[*.rst]
 end_of_line = crlf      # the PyPI asks developers to do so.
