@@ -221,7 +221,6 @@ class MediaRSSItem(PyRSS2Gen.RSSItem, object):
                     "MediaRSSItem: media_group check not implemented yet.")
 
     def publish_extensions(self, handler):
-        # print("3 " + self.title + ": " + str(self.media_content))
         if isinstance(self.media_content, list):
             [PyRSS2Gen._opt_element(handler, "media:content", mc_element) for
              mc_element in self.media_content]
