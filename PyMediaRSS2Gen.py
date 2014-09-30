@@ -4,6 +4,9 @@
 http://www.rssboard.org/media-rss
 """
 
+from __future__ import absolute_import
+from __future__ import unicode_literals
+
 __name__ = "PyMediaRSS2Gen"
 __version__ = '0.0.1'
 __author__ = 'Dirk Weise <code@dirk-weise.de>'
