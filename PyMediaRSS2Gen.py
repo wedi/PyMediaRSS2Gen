@@ -96,7 +96,7 @@ class MediaContent(object):
     def add_attribute(self, name, value, allowed_values=None):
         if value and value != 'none':
 
-            if isinstance(value, (int, bool, long)):
+            if isinstance(value, (int, bool)):
                 value = str(value)
 
             if allowed_values and value not in allowed_values:
