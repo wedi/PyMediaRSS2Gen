@@ -69,8 +69,10 @@ Every open source project lives from the generous help by contributors
 that sacrifice their time and PyMediaRSS2Gen is no different.
 
 This project lives on `GitHub`_. You are very welcome to fork this
-project and submit pull requests! If you don’t know how to do this you
-can still report errors by `opening an issue`_.
+project and submit a pull requests! If you don’t know how to do this
+you can still report errors by `opening an issue`_.
+
+Look here for more details about  `contributing to PyMediaRSS2Gen`_.
 
 
 Status and Todo
@@ -161,6 +163,6 @@ Copyright and license
 .. _pet project on GitHub: https://github.com/wedi/PyMediaRSS2Gen
 .. _open an issue: https://github.com/wedi/PyMediaRSS2Gen/issues
 .. _GitHub: https://github.com/wedi/PyMediaRSS2Gen/
-.. _readme about contributions: https://github.com/wedi/PyMediaRSS2Gen/blob/master/CONTRIBUTING.rst
+.. _contributing to PyMediaRSS2Gen: https://github.com/wedi/PyMediaRSS2Gen/blob/master/CONTRIBUTING.md
 .. _opening an issue: https://github.com/wedi/PyMediaRSS2Gen/issues/
 .. _MIT license: https://github.com/wedi/PyMediaRSS2Gen/blob/master/LICENSE.txt
