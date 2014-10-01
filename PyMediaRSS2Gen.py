@@ -1,5 +1,5 @@
 # coding=utf-8
-"""PyRSS2Gen - TopObj Python library for generating Media RSS 2.0 feeds.
+"""PyMediaRSS2Gen - A Python library for generating Media RSS 2.0 feeds.
 
 http://www.rssboard.org/media-rss
 """
@@ -31,7 +31,10 @@ _media_elements = ['media_rating', 'media_title', 'media_description',
 
 class MediaRSS2(PyRSS2Gen.RSS2, object):
 
+    """The main class representing a Media RSS Feed."""
+
     def to_xml(self, encoding="UTF-8"):
+        """Return the Media RSS Feed's XML representation."""
         # we add the media namespace if we see any media items
         if any([key for item in self.items
                 for key in vars(item)
@@ -41,6 +44,7 @@ class MediaRSS2(PyRSS2Gen.RSS2, object):
         super(MediaRSS2, self).to_xml(encoding)
 
     def write_xml(self, outfile, encoding="UTF-8"):
+        """Write the Media RSS Feed's XML representation to the given file."""
         # we add the media namespace if we see any media items
         if any([key for item in self.items for key in vars(item) if
                 key.startswith('media_') and getattr(item, key)]):
@@ -51,7 +55,7 @@ class MediaRSS2(PyRSS2Gen.RSS2, object):
 
 class MediaContent(object):
 
-    """Publish a media element"""
+    """Publish a media:content element."""
 
     element_attrs = None
 
@@ -72,7 +76,7 @@ class MediaContent(object):
         width=None,
         lang=None
     ):
-
+        """Create a media:content element, args will be attributes."""
         self.element_attrs = OrderedDict()
 
         self.add_attribute('url', url)
@@ -94,6 +98,7 @@ class MediaContent(object):
         self.add_attribute('lang', lang)
 
     def add_attribute(self, name, value, allowed_values=None):
+        """Add an attribute to the MediaContent element."""
         if value and value != 'none':
 
             if isinstance(value, (int, bool)):
@@ -107,9 +112,11 @@ class MediaContent(object):
             self.element_attrs[name] = value
 
     def publish(self, handler):
+        """Publish the MediaContent as XML."""
         PyRSS2Gen._element(handler, "media:content", None, self.element_attrs)
 
     def __repr__(self):
+        """Return a nice string representation for prettier debugging."""
         return "MediaContent(url='%s', type='%s', width='%s', height='%s')" % \
                (self.element_attrs.get('url', None),
                 self.element_attrs.get('type', None),
@@ -119,7 +126,7 @@ class MediaContent(object):
 
 class MediaRSSItem(PyRSS2Gen.RSSItem, object):
 
-    """Publish an Media RSS Item"""
+    """Publish a Media RSS Item."""
 
     def __init__(
         self,
@@ -142,7 +149,7 @@ class MediaRSSItem(PyRSS2Gen.RSSItem, object):
 
         **kwargs
     ):
-
+        """Create a Media RSS item that contains args as elements."""
         self.media_group = media_group
         self.media_content = media_content
         self.media_player = media_player
@@ -163,6 +170,7 @@ class MediaRSSItem(PyRSS2Gen.RSSItem, object):
         self.check_complicance()
 
     def __repr__(self):
+        """Return a nice string representation for prettier debugging."""
         return "MediaContent(title='%s', media_content='%s', " \
                "media_group='%s', media_player='%s', media_peerLink='%s', " \
                "media_location='%s')" % (
@@ -175,10 +183,11 @@ class MediaRSSItem(PyRSS2Gen.RSSItem, object):
                )
 
     def check_complicance(self):
-        """Check compliance with Media RSS Specification, Version 1.5.1
+        """Check compliance with Media RSS Specification, Version 1.5.1.
 
-        see http://www.rssboard.org/media-rss"""
-
+        see http://www.rssboard.org/media-rss
+        Raises AttributeError on error.
+        """
         # check Media RSS requirement: one of the following elements is
         # required: media_group | media_content | media_player | media_peerLink
         # | media_location. We do the check only if any media_... element is
@@ -221,6 +230,7 @@ class MediaRSSItem(PyRSS2Gen.RSSItem, object):
                     "MediaRSSItem: media_group check not implemented yet.")
 
     def publish_extensions(self, handler):
+        """Publish the Media RSS Feed elements as XML."""
         if isinstance(self.media_content, list):
             [PyRSS2Gen._opt_element(handler, "media:content", mc_element) for
              mc_element in self.media_content]

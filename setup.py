@@ -1,9 +1,14 @@
 # coding=utf-8
+"""Setup script to install PyMediaRSS2Gen."""
+
 from distutils.core import setup
 
 
 try:
-    long_description = open('README.rst').read() + '\n\n' + open('CHANGELOG.rst').read() + '\n\n' + open('AUTHORS.rst').read()
+    long_description = \
+        open('README.rst').read() + '\n\n' + \
+        open('CHANGELOG.rst').read() + '\n\n' + \
+        open('AUTHORS.rst').read()
 except (OSError, IOError):
     long_description = ''
 
@@ -16,7 +21,7 @@ setup(
     author_email='code@dirk-weise.de',
     license='MIT',
     url='https://github.com/wedi/PyMediaRSS2Gen',
-    download_url='https://github.com/wedi/limit-login-countries/archive/0.1.0.tar.gz',
+    download_url='https://github.com/wedi/limit-login-countries/archive/0.1.0.tar.gz',  # noqa
     keywords=['RSS', 'Feed'],
     requires=['PyRSS2Gen'],
     py_modules=['PyMediaRSS2Gen'],
