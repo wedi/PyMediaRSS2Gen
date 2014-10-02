@@ -20,25 +20,11 @@ This way I keep track of what needs to be done and users can see what they can
 accomplish out of the box and what requires some contributions. Feel free to
 fork the project, implement a missing feature and send a pull request.
 
+PyMediaRSS2Gen is so far tested to work with Python versions 2.6, 2.7 and 3.4.
+
 
 Usage
 -----
-
-
-Requirements
-------------
-
-1. **Python**
-
-   PyMediaRSS2Gen is tested to run on Python starting version 2.6. as it
-   requires the OrderedDict module. If you need to run it with Python
-   2.6 (or maybe lower, I haven’t tested it) you can use the
-   `OrderedDict Backport by Raymond Hettinger`_.
-
-2. **Modules**
-
-   PyMediaRSS2Gen requires the `PyRSS2Gen module`_ on which it is based
-   and which gave the initial spark for this module.
 
 
 Installation
@@ -57,9 +43,6 @@ Installation
 
    which uses the standard Python installer. Read the documentation for
    more details about installing Python modules.
-
-3. As this module contains just one Python file you could just copy it
-   wherever you need it, e.g. your project directory.
 
 
 How To Contribute

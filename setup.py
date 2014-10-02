@@ -1,8 +1,13 @@
 # coding=utf-8
 """Setup script to install PyMediaRSS2Gen."""
 
+import sys
 from distutils.core import setup
 
+if sys.version_info < (2, 7):
+    version_dep_reqs = ['ordereddict']
+else:
+    version_dep_reqs = []
 
 try:
     long_description = \
@@ -23,7 +28,7 @@ setup(
     url='https://github.com/wedi/PyMediaRSS2Gen',
     download_url='https://github.com/wedi/limit-login-countries/archive/0.1.0.tar.gz',  # noqa
     keywords=['RSS', 'Feed'],
-    requires=['PyRSS2Gen'],
+    install_requires=['PyRSS2Gen'].extend(version_dep_reqs),
     py_modules=['PyMediaRSS2Gen'],
     classifiers=[
         "Programming Language :: Python",
