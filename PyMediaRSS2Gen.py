@@ -200,7 +200,7 @@ class MediaRSSItem(PyRSS2Gen.RSSItem, object):
            and not self.media_peerLink
            and not self.media_location
            ):
-            raise TypeError(
+            raise AttributeError(
                 "Using media elements requires the specification of at least "
                 "one of the following elements: 'media_group', "
                 "'media_content', 'media_player', 'media_peerLink' or "
