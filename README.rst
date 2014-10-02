@@ -35,13 +35,13 @@ Installation
 
        % pip install PyMediaRSS2Gen
 
-2. If you want to install the module manually download the package,
+2. If you want to install the module manually, download the package,
    unzip it and run::
 
        % cd where/you/put/PyMediaRSS2Gen/
        % python setup.py install
 
-   which uses the standard Python installer. Read the documentation for
+   which uses the standard Python installer. `Read the documentation`_ for
    more details about installing Python modules.
 
 
@@ -55,7 +55,7 @@ This project lives on `GitHub`_. You are very welcome to fork this
 project and submit a pull requests! If you don’t know how to do this
 you can still report errors by `opening an issue`_.
 
-Look here for more details about  `contributing to PyMediaRSS2Gen`_.
+Look here for more details about `contributing to PyMediaRSS2Gen`_.
 
 
 Status and Todo
@@ -145,6 +145,7 @@ Copyright and license
 .. _Read the documentaion: https://docs.python.org/install/index.html
 .. _pet project on GitHub: https://github.com/wedi/PyMediaRSS2Gen
 .. _open an issue: https://github.com/wedi/PyMediaRSS2Gen/issues
+.. _Read the documentation: https://docs.python.org/install/
 .. _GitHub: https://github.com/wedi/PyMediaRSS2Gen/
 .. _contributing to PyMediaRSS2Gen: https://github.com/wedi/PyMediaRSS2Gen/blob/master/CONTRIBUTING.md
 .. _opening an issue: https://github.com/wedi/PyMediaRSS2Gen/issues/
