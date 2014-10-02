@@ -41,7 +41,7 @@ class MediaRSS2(PyRSS2Gen.RSS2, object):
                 if key.startswith('media_') and getattr(item, key)]):
             self.rss_attrs["xmlns:media"] = "http://search.yahoo.com/mrss/"
         self.generator = _generator_name
-        super(MediaRSS2, self).to_xml(encoding)
+        return super(MediaRSS2, self).to_xml(encoding)
 
     def write_xml(self, outfile, encoding="UTF-8"):
         """Write the Media RSS Feed's XML representation to the given file."""
