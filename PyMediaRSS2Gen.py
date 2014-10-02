@@ -79,25 +79,25 @@ class MediaContent(object):
         """Create a media:content element, args will be attributes."""
         self.element_attrs = OrderedDict()
 
-        self.add_attribute('url', url)
-        self.add_attribute('fileSize', fileSize)
-        self.add_attribute('type', type)
-        self.add_attribute('medium', medium,
-                           ['image', 'audio', 'video', 'document',
-                            'executable'])
-        self.add_attribute('isDefault', isDefault, ['true', 'false'])
-        self.add_attribute('expression', expression,
-                           ['sample', 'full', 'nonstop'])
-        self.add_attribute('bitrate', bitrate)
-        self.add_attribute('framerate', framerate)
-        self.add_attribute('samplingrate', samplingrate)
-        self.add_attribute('channels', channels)
-        self.add_attribute('duration', duration)
-        self.add_attribute('height', height)
-        self.add_attribute('width', width)
-        self.add_attribute('lang', lang)
+        self._add_attribute('url', url)
+        self._add_attribute('fileSize', fileSize)
+        self._add_attribute('type', type)
+        self._add_attribute('medium', medium,
+                            ['image', 'audio', 'video', 'document',
+                             'executable'])
+        self._add_attribute('isDefault', isDefault, ['true', 'false'])
+        self._add_attribute('expression', expression,
+                            ['sample', 'full', 'nonstop'])
+        self._add_attribute('bitrate', bitrate)
+        self._add_attribute('framerate', framerate)
+        self._add_attribute('samplingrate', samplingrate)
+        self._add_attribute('channels', channels)
+        self._add_attribute('duration', duration)
+        self._add_attribute('height', height)
+        self._add_attribute('width', width)
+        self._add_attribute('lang', lang)
 
-    def add_attribute(self, name, value, allowed_values=None):
+    def _add_attribute(self, name, value, allowed_values=None):
         """Add an attribute to the MediaContent element."""
         if value and value != 'none':
 
