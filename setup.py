@@ -26,7 +26,7 @@ setup(
     author_email='code@dirk-weise.de',
     license='MIT',
     url='https://github.com/wedi/PyMediaRSS2Gen',
-    download_url='https://github.com/wedi/limit-login-countries/archive/0.1.0.tar.gz',  # noqa
+    download_url='https://github.com/wedi/PyMediaRSS2Gen/archive/v0.1.0.tar.gz',  # noqa
     keywords=['RSS', 'Feed'],
     install_requires=['PyRSS2Gen'].extend(version_dep_reqs),
     py_modules=['PyMediaRSS2Gen'],
