@@ -2,7 +2,7 @@
 """Setup script to install PyMediaRSS2Gen."""
 
 import sys
-from distutils.core import setup
+from setuptools import setup
 
 if sys.version_info < (2, 7):
     version_dep_reqs = ['ordereddict']
@@ -32,11 +32,15 @@ setup(
     py_modules=['PyMediaRSS2Gen'],
     classifiers=[
         "Programming Language :: Python",
+        "Programming Language :: Python :: 2",
+        "Programming Language :: Python :: 2.6",
+        "Programming Language :: Python :: 2.7",
         "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.4",
         "Development Status :: 3 - Alpha",
         "Environment :: Web Environment",
         "Intended Audience :: Developers",
-        'License :: OSI Approved :: MIT License'
+        "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
         "Topic :: Internet :: WWW/HTTP",
         "Topic :: Software Development :: Libraries :: Python Modules",
