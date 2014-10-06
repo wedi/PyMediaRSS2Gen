@@ -26,6 +26,77 @@ PyMediaRSS2Gen is so far tested to work with Python versions 2.6, 2.7 and 3.4.
 Usage
 -----
 
+The base class for a media feed is ``MediaRSS2``. It's attributes represent sub
+elements, e.g. ``MediaRSS2.copyright` represents the ``<copyright>`` element
+and `MediaRSS2.lastBuildDate`` the ``<lastBuildDate>`` element.
+
+For simple elements which contain just a string, boolean or integer just use
+the according data type. More complicated elements, typically those with
+attributes and / or sub elements like ``<media:content>`` or
+``<media:community>``, (will) have their own classes defined.
+
+Probably you will want to import PyRSS2Gen to make use some of it's helper
+classes, e.g. for adding a channel image (``PyRSS2Gen.Image``) or GUIDs to
+items (``PyRSS2Gen.Guid``).
+
+Uage is shown by example. For more details check the code and the
+`PyRSS2Gen documentation`_.
+
+.. code:: python
+
+    import datetime
+
+    import PyMediaRSS2Gen
+
+
+    mediaFeed = PyMediaRSS2Gen.MediaRSS2(
+        title="A sample Media RSS Feed",
+        link="https://github.com/wedi/PyMediaRSS2Gen/",
+        description="Description for a feed with media elements"
+    )
+    mediaFeed.copyright = "Copyright (c) 2014 Foo Inc. All rights reserved."
+    mediaFeed.lastBuildDate = datetime.datetime.now()
+    mediaFeed.items = [
+        PyMediaRSS2Gen.MediaRSSItem(
+            title="First item with media element",
+            description="An image of foo attached in a media:content element",
+            media_content=PyMediaRSS2Gen.MediaContent(
+                url="http://example.com/assets/foo1.jpg",
+                fileSize=123456,
+                medium="image",
+                width="480",
+                height="640"
+            )
+        ),
+        PyMediaRSS2Gen.MediaRSSItem(
+            title="Second item with media element",
+            description="A video with multiple resolutions",
+            media_content=[
+                PyMediaRSS2Gen.MediaContent(
+                    url="http://example.com/assets/foo_HD.mp4",
+                    fileSize=8765432,
+                    type="video/mp4",
+                    width="1920",
+                    height="1080"
+                ),
+                PyMediaRSS2Gen.MediaContent(
+                    url="http://example.com/assets/foo_SD.mp4",
+                    fileSize=2345678,
+                    type="video/mp4",
+                    width="1280",
+                    height="720"
+                ),
+            ]
+        ),
+        PyMediaRSS2Gen.MediaRSSItem(
+            title="And an item with no media element at all",
+            description="An image of foo attached in an media:content element",
+            link="http://example.com/article/important-story.html"
+        )
+    ]
+    mediaFeed.write_xml(open("rss2.xml", "w"))
+
+
 
 Installation
 ------------
@@ -142,6 +213,7 @@ Copyright and license
 .. _PyRSS2Gen module: https://pypi.python.org/pypi/PyRSS2Gen/
 .. _OrderedDict Backport by Raymond Hettinger: http://code.activestate.com/recipes/576693/
 .. _download the package: https://pypi.python.org/pypi/PyMediaRSS2Gen/
+.. _PyRSS2Gen documentation: https://pypi.python.org/pypi/PyRSS2Gen/
 .. _Read the documentaion: https://docs.python.org/install/index.html
 .. _pet project on GitHub: https://github.com/wedi/PyMediaRSS2Gen
 .. _open an issue: https://github.com/wedi/PyMediaRSS2Gen/issues
