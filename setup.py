@@ -18,14 +18,14 @@ except (OSError, IOError):
 
 setup(
     name='PyMediaRSS2Gen',
-    version='0.1.0',
+    version='0.1.1',
     description='A Python library for generating Media RSS 2.0 feeds.',
     long_description=long_description,
     author='Dirk Weise',
     author_email='code@dirk-weise.de',
     license='MIT',
     url='https://github.com/wedi/PyMediaRSS2Gen',
-    download_url='https://github.com/wedi/PyMediaRSS2Gen/archive/v0.1.0.tar.gz',  # noqa
+    download_url='https://github.com/wedi/PyMediaRSS2Gen/archive/v0.1.1.tar.gz',  # noqa
     keywords=['RSS', 'Feed'],
     install_requires=install_requires,
     py_modules=['PyMediaRSS2Gen'],
