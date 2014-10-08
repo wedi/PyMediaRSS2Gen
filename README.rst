@@ -27,7 +27,7 @@ Usage
 -----
 
 The base class for a media feed is ``MediaRSS2``. It's attributes represent sub
-elements, e.g. ``MediaRSS2.copyright` represents the ``<copyright>`` element
+elements, e.g. ``MediaRSS2.copyright`` represents the ``<copyright>`` element
 and `MediaRSS2.lastBuildDate`` the ``<lastBuildDate>`` element.
 
 For simple elements which contain just a string, boolean or integer just use
