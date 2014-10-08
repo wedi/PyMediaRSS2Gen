@@ -4,10 +4,9 @@
 import sys
 from setuptools import setup
 
+install_requires = ['PyRSS2Gen']
 if sys.version_info < (2, 7):
-    version_dep_reqs = ['ordereddict']
-else:
-    version_dep_reqs = []
+    install_requires.append('ordereddict')
 
 try:
     long_description = \
@@ -28,7 +27,7 @@ setup(
     url='https://github.com/wedi/PyMediaRSS2Gen',
     download_url='https://github.com/wedi/PyMediaRSS2Gen/archive/v0.1.0.tar.gz',  # noqa
     keywords=['RSS', 'Feed'],
-    install_requires=['PyRSS2Gen'].extend(version_dep_reqs),
+    install_requires=install_requires,
     py_modules=['PyMediaRSS2Gen'],
     classifiers=[
         "Programming Language :: Python",
